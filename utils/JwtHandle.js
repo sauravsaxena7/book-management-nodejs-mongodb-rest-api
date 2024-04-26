@@ -1,3 +1,5 @@
+import jwt from "jsonwebtoken"
+
 const cookieOption = {
      
     maxAge: 15*24*60*100,

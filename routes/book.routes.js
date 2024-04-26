@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { AddNewBook, DeleteBook, UpdateBook, searchBook } from "../controllers/book.controller.js";
-import authMiddleWare from "../middlewares/authMiddleWares.js";
+import authMiddleWare from "../middlewares/authMiddleWare.js"
 import { errorHandler } from "../ErrorHandler.js";
+import { AddNewBook, DeleteBook, UpdateBook, searchBook } from "../controllers/book.controller.js";
 
 const bookRoutes = Router();
 

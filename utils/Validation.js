@@ -2,17 +2,35 @@
 
 const signUpValidation = (data)=>{
 
-    const error = {};
+    const error = {isValidationIssue:false};
 
-    if(!data.username || !data.password || !data.name || data.confirmPassword){
+    console.log("validation data",data)
+    if(!data.username){
         error['isValidationIssue']=true;
-        error['message']="One or more validation occur (username,password,name,confirmPassword)";
+        error['username']="Invalid Username";
         
 
-    }else{
-        error['isValidationIssue']=false;
     }
 
+    if( !data.password ){
+        error['isValidationIssue']=true;
+        error['password']="Invalid Password";
+        
+
+    }
+
+    if( !data.name ){
+        error['isValidationIssue']=true;
+        error['name']="Invalid name";
+        
+
+    }
+    if(!data.confirmPassword){
+        error['isValidationIssue']=true;
+        error['confirmPassword']="invalid confirmPassword";
+        
+
+    }
     return error;
 
 }
@@ -40,7 +58,7 @@ const addOrUpdateBookValidation = (data)=>{
 
     if(!data.title || !data.publication_year ){
         error['isValidationIssue']=true;
-        error['message']="One or more validation occur (username,password)";
+        error['message']="One or more validation occur (title,publication_year)";
         
 
     }else{
@@ -51,4 +69,4 @@ const addOrUpdateBookValidation = (data)=>{
 
 }
 
-export {signUpValidation}
+export {signUpValidation,loginValidation,addOrUpdateBookValidation}

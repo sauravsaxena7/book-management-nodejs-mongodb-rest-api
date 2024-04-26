@@ -1,9 +1,9 @@
 import { compareSync } from "bcrypt";
-import { NewException } from "../exceptions/Exception";
-import { ErrorCodes } from "../exceptions/RootException";
-import { Author } from "../models/auth.model";
-import { cookieOption, sendToken } from "../utils/JwtHandle";
-import { signUpValidation } from "../utils/Validation";
+import { NewException } from "../exceptions/Exception.js";
+import { ErrorCodes } from "../exceptions/RootException.js";
+import { Author } from "../models/auth.model.js";
+import { cookieOption, sendToken } from "../utils/JwtHandle.js";
+import { loginValidation, signUpValidation } from "../utils/Validation.js";
 
 export const signup = async (req, res) => {
   const validate = signUpValidation(req.body);
